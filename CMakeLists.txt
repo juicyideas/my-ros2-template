@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(examples_rclcpp_minimal_action_server)
+project(minimal_project)
 
 # Default to C++17
 if(NOT CMAKE_CXX_STANDARD)
@@ -16,8 +16,8 @@ find_package(example_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)
 
-add_executable(action_server_member_functions member_functions.cpp)
-ament_target_dependencies(action_server_member_functions
+add_executable(main main.cpp)
+ament_target_dependencies(main
   "rclcpp"
   "rclcpp_action"
   "example_interfaces")
@@ -30,7 +30,7 @@ if(BUILD_TESTING)
 endif()
 
 install(TARGETS
-  action_server_member_functions
+  main
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
